@@ -3,4 +3,11 @@ Andmetüüp:
 2. Arv (INT), SMALLINT, Decimal(5, 2) kuus on 5-koik arvud ja 2- peale koma)
 3. Loogika (bit, bool ,boolean, true/false)
 4. Date time/ Kuu paeva (date/time, date, time)
-5.
+-------------------------------------------------
+Piirangud /Ограничения 
+
+*PRIMARY KEY -уникальность добавления строки
+*FOREIGN KEY - Seos- связь с РК другой таблицы
+*NOT NULL
+*UNIQUE
+*CHECK- valik выбор значений
