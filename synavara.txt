@@ -11,3 +11,8 @@ Piirangud /Ограничения
 *NOT NULL
 *UNIQUE
 *CHECK- valik выбор значений
+
+
+SQL- Structure Query Language
+* DDl-Data Definition Language -CREATE TABLE, ALTER TABLE, DROP TABLE
+* DML-Data Manipulation Language -INSERT INTO. UPDATE, DELETE
