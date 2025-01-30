@@ -20,8 +20,8 @@ DELETE FROM film WHERE filmID=5
 
 
 CREATE TABLE zanr(
-zanrID int PRIMARY KEY identity(1,1)
-zanrNimetus varchar(20)UNIQUE
+zanrID int PRIMARY KEY identity(1,1),
+zanrNimetus varchar(20) UNIQUE
 )
 INSERT INTO zanr(zanrNimetus)
 VALUES ('draama'), ('detektiiv');
@@ -29,6 +29,9 @@ SELECT * FROM zanr;
 
 --tabeli film struktuuri muutmine --
 --FK lisamine mis o seotud tabeliga zanr(zanrID)
+
+ALTER TABLE film ADD zanrID int;
+
 ALTER TABLE film ADD CONSTRAINT fk_zanr
 FOREIGN KEY (zanrID) REFERENCES zanr(zanrID);
 
