@@ -1,0 +1,6 @@
+Andmetüüp:
+1. Sumbol/Text (VARCHAR(25) ,CHAR(5), TEXT)
+2. Arv (INT), SMALLINT, Decimal(5, 2) kuus on 5-koik arvud ja 2- peale koma)
+3. Loogika (bit, bool ,boolean, true/false)
+4. Date time/ Kuu paeva (date/time, date, time)
+5.
