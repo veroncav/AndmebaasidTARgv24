@@ -1,3 +1,81 @@
+-- Создаем базу данных
+CREATE DATABASE studentsTARgv24;
+USE studentsTARgv24;
+
+
+-- Создаем таблицу students
+CREATE TABLE students(
+    student_id INT PRIMARY KEY IDENTITY(1,1),
+    full_name VARCHAR(100),
+    class_name VARCHAR(50),
+    birth_date DATE,
+    group_name VARCHAR(50)
+);
+
+-- Просмотр данных в таблице
+SELECT * FROM students;
+
+-- Процедура для добавления нового студента
+CREATE PROCEDURE addStudent
+@fullName VARCHAR(100),
+@className VARCHAR(50),
+@birthDate DATE,
+@groupName VARCHAR(50)
+
+AS
+BEGIN
+INSERT INTO students(full_name, class_name, birth_date, group_name)
+
+VALUES(
+
+@fullName, @className, @birthDate, @groupName);
+    
+    -- Показываем всех студентов после добавления
+    SELECT * FROM students;
+END;
+
+-- Процедура для обновления группы студента
+CREATE PROCEDURE updateStudentGroup
+    @studentId INT,
+    @newGroupName VARCHAR(50)
+AS
+BEGIN
+    -- Обновляем группу студента по ID
+    UPDATE students
+    SET group_name = @newGroupName
+    WHERE student_id = @studentId;
+
+    -- Показываем все студенты после обновления
+    SELECT * FROM students;
+END;
+
+SELECT * 
+FROM sys.objects
+WHERE type = 'P' AND name = 'deleteStudent';
+
+-- Процедура для удаления студента по ID
+CREATE PROCEDURE deleteStudent
+    @studentId INT
+AS
+BEGIN
+    -- Показываем студента перед удалением
+    SELECT * FROM students;
+
+    -- Удаляем студента по ID
+    DELETE FROM students
+    WHERE student_id = @studentId;
+
+    -- Показываем оставшихся студентов
+    SELECT * FROM students;
+END;
+
+-- Добавляем нового студента
+EXEC addStudent 'Veronika Vanitseva', 'Mathematics', '1999-09-30', 'A';
+
+
+
+
+
 
 CREATE DATABASE procTARgv24;
 
